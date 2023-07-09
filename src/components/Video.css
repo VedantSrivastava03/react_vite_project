@@ -1,5 +1,5 @@
 .container{
-
+    position: relative;
     width: 15em;
     margin: 0 0.2em;
     float: left;
@@ -8,5 +8,20 @@
 }
 
 .pic{
-    margin-top: 2em;
+    margin-top: 1em;
+    width: 100%;
+    
+}
+.close{
+    position: absolute;
+    width: fit-content;
+    height: 13%;
+    right: 17%;
+}
+
+.edit{
+    position: absolute;
+    width: fit-content;
+    height: 13%;
+    left: 0%;
 }

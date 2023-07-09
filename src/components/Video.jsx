@@ -1,9 +1,17 @@
 import React from "react";
-import './Video.css';
+import "./Video.css";
 
-const Video = ({ title, channel, views, time, verified, id, children, deleteVideo, editVideo }) => {
-
-
+const Video = ({
+  title,
+  channel,
+  views,
+  time,
+  verified,
+  id,
+  children,
+  deleteVideo,
+  editVideo,
+}) => {
   // let verified = false;
   // let channelName;
 
@@ -16,22 +24,35 @@ const Video = ({ title, channel, views, time, verified, id, children, deleteVide
 
   return (
     <>
-    
-      <div className="container"  >
-        <button className="close" onClick={()=>{deleteVideo(id)}}>X</button>
-        <button className="edit" onClick={()=>{editVideo(id)}}>edit</button>
+      <div className="container">
+        <button
+          className="close"
+          onClick={() => {
+            deleteVideo(id);
+          }}
+        >
+          X
+        </button>
+        <button
+          className="edit"
+          onClick={() => {
+            editVideo(id);
+          }}
+        >
+          edit
+        </button>
         <div className="pic">
-          <img
-            src={`https://picsum.photos/id/${id}/200/120`}
-            alt="coding"
-          />
+          <img src={`https://picsum.photos/id/${id}/200/120`} alt="coding" />
         </div>
 
         <div className="title">{title}</div>
 
         {/* {verified ?<div className="channel"> {channel} ✅ </div>:<div className="channel"> {channel} </div>} */}
         {/* <div className="channel"> {channel} {verified ? "✅" : null}</div> */}
-        <div className="channel"> {channel} {verified && "✅" }</div>
+        <div className="channel">
+          {" "}
+          {channel} {verified && "✅"}
+        </div>
 
         <div className="view">
           {" "}
@@ -39,9 +60,6 @@ const Video = ({ title, channel, views, time, verified, id, children, deleteVide
         </div>
         <div>{children}</div>
       </div>
-
-      
-      
     </>
   );
 };

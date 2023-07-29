@@ -8,15 +8,15 @@ const initialData = {
   title: "",
   channel: "",
 };
-const AddVideo = ({ addVideos, editableVideo, updateVideo }) => {
+const AddVideo = ({ dispatch, editableVideo }) => {
   const [video, setVideo] = useState(initialData);
 
   function handleSubmit(e) {
     e.preventDefault();
     if(editableVideo){
-      updateVideo(video)
+      dispatch({type:"Update", payload:video})
     }
-    else{addVideos(video)}
+    else{dispatch({ type: "ADD", payload: video });}
     
     setVideo(initialData);
   }

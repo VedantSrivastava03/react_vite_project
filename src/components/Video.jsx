@@ -9,7 +9,7 @@ const Video = ({
   verified,
   id,
   children,
-  deleteVideo,
+  dispatch,
   editVideo,
 }) => {
   // let verified = false;
@@ -28,7 +28,7 @@ const Video = ({
         <button
           className="close"
           onClick={() => {
-            deleteVideo(id);
+            dispatch({ type: "Delete", payload: id });
           }}
         >
           X
@@ -47,8 +47,8 @@ const Video = ({
 
         <div className="title">{title}</div>
 
-        {/* {verified ?<div className="channel"> {channel} ✅ </div>:<div className="channel"> {channel} </div>} */}
-        {/* <div className="channel"> {channel} {verified ? "✅" : null}</div> */}
+        {/* {verified ?<div className="channel"> {channel} ✅ </div>:<div className="channel"> {channel} </div>}
+        <div className="channel"> {channel} {verified ? "✅" : null}</div> */}
         <div className="channel">
           {" "}
           {channel} {verified && "✅"}
